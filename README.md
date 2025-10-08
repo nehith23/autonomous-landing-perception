@@ -1,79 +1,92 @@
 # Computer Vision and Sensing Techniques for Autonomous Drone Landing in Space Exploration
+
+This repository contains the coursework project for **COMP0245 – Computer Vision and Robotics**, focusing on developing and evaluating computer vision algorithms for **autonomous drone landing and navigation in space environments**.  
+The project integrates segmentation, motion tracking, and rotation analysis to estimate geometric and dynamic properties of a suspended Astronomical Object (AO).
+
 ![ORB_Matching](https://github.com/user-attachments/assets/a1536f23-f220-435b-ad71-cf89fd6a198b)
 
+---
+
 ## Overview
-This project focused on developing robust computer vision and sensing algorithms to estimate the geometry, rotation, and motion of a suspended Astronomical Object (AO) model. The insights gained from this analysis can be applied to autonomous drone navigation and landing strategies in dynamic space exploration environments.
+The project develops a perception pipeline that combines **vision-based sensing** and **geometric analysis** to extract motion cues, surface velocity, and object rotation information. These insights guide safe and precise drone landing strategies in unknown or dynamic space-like environments.
+
+---
 
 ## Objectives
-- Accurately segment and isolate the AO from images.
-- Analyze the AO's geometric properties, such as its center and height above the ground.
-- Estimate the AO's rotation cycle using video processing.
-- Derive surface velocity parameters to guide drone navigation.
+- Segment and isolate the Astronomical Object (AO) in diverse visual conditions.  
+- Estimate AO geometry: center, diameter, and height above the ground.  
+- Compute the AO’s rotation cycle from video data.  
+- Derive surface velocity parameters to inform drone navigation and control.
+
+---
 
 ## Features
-- **Image Segmentation**: Implemented HSV and Hough Transform-based methods, enhanced by combined approaches for improved accuracy.
-- **Geometric Analysis**: Tracked the AO's centroid and estimated its height above the ground using stereo depth estimation.
-- **Rotation Cycle Estimation**: Used ORB-based feature matching and RANSAC for robust rotation time detection.
-- **Drone Navigation Parameters**: Calculated the AO's diameter and surface velocities as a function of latitude.
+- **Image Segmentation:** HSV and Hough Transform-based methods, combined for accuracy.  
+- **Geometric Analysis:** Centroid tracking and stereo-based height estimation.  
+- **Rotation Cycle Estimation:** ORB + RANSAC feature matching for temporal motion analysis.  
+- **Drone Navigation Parameters:** Computation of diameter and surface velocities as a function of latitude.
+
+---
 
 ## Methodology
+
 ### Task 1: Image Segmentation
-- **Techniques**: HSV segmentation, Hough Transform, and combined segmentation.
-- **Evaluation**: Assessed segmentation accuracy using metrics like ROC curves, IoU, F1 score, and AUC.
-<img width="480" alt="image" src="https://github.com/user-attachments/assets/2e5afa63-126f-425f-a132-f8c98a6e1d1e" />
+- **Techniques:** HSV color thresholding, Hough Transform, combined segmentation.  
+- **Evaluation:** ROC curves, IoU, F1-score, and AUC metrics.  
+<img width="480" alt="Segmentation Results" src="https://github.com/user-attachments/assets/2e5afa63-126f-425f-a132-f8c98a6e1d1e" />
 
 ### Task 2: Geometric Analysis
-- **Center Tracking**: Extracted and tracked the AO's centroid over time, identifying sinusoidal motion patterns.
-- **Height Estimation**: Applied stereo depth estimation with calibrated cameras to compute the AO's height.
-<img width="640" alt="image" src="https://github.com/user-attachments/assets/5030fb92-afca-47d1-8340-fb5401cf710e" />
+- **Center Tracking:** Extracted AO centroid; sinusoidal motion patterns observed.  
+- **Height Estimation:** Stereo depth computation with calibrated cameras.  
+<img width="640" alt="Geometric Analysis" src="https://github.com/user-attachments/assets/5030fb92-afca-47d1-8340-fb5401cf710e" />
 
 ### Task 3: Rotation Cycle Estimation
-- **Feature Matching**: Employed ORB and RANSAC to detect rotation peaks.
-- **Real-Time Processing**: Automated rotation cycle estimation for dynamic inputs.
-<img width="785" alt="image" src="https://github.com/user-attachments/assets/e96bc24c-79cd-4abc-adb1-0cd08ea31851" />
-
+- **Approach:** ORB feature matching + RANSAC filtering for peak rotation detection.  
+- **Result:** Reliable cycle estimation under noisy, real-time conditions.  
+<img width="785" alt="Rotation Estimation" src="https://github.com/user-attachments/assets/e96bc24c-79cd-4abc-adb1-0cd08ea31851" />
 
 ### Task 4: Drone Navigation Parameters
-- **Diameter Measurement**: Used the Pinhole Camera Model to convert pixel measurements to real-world distances.
-- **Velocity Calculation**: Computed surface velocities for various latitudes using rotation period and radius.
-<img width="566" alt="image" src="https://github.com/user-attachments/assets/80d431e5-fd42-4495-87b1-6403696f2c2f" />
-<img width="674" alt="image" src="https://github.com/user-attachments/assets/4adac2ea-b93c-4dca-ae9b-073e33164936" />
+- **Diameter Calculation:** Pixel-to-world conversion via Pinhole Camera Model.  
+- **Velocity Derivation:** Surface velocity vs. latitude, based on rotation period.  
+<img width="566" alt="Diameter Measurement" src="https://github.com/user-attachments/assets/80d431e5-fd42-4495-87b1-6403696f2c2f" />  
+<img width="674" alt="Velocity Calculation" src="https://github.com/user-attachments/assets/4adac2ea-b93c-4dca-ae9b-073e33164936" />
+
+---
 
 ## Tools and Libraries
-- **Languages**: Python 3.11.x
-- **Libraries**:
-- OpenCV: Advanced image processing.
-- NumPy: Numerical computations.
-- Matplotlib: Data visualization.
-- scikit-learn: Performance evaluation metrics.
-- PyAutoGUI: Screenshot capturing.
+- **Language:** Python 3.11  
+- **Core Libraries:**  
+  - OpenCV – Image processing and feature matching  
+  - NumPy – Numerical computations  
+  - Matplotlib – Data visualization  
+  - scikit-learn – Evaluation metrics  
+  - PyAutoGUI – Frame capture and automation
+
+---
 
 ## Results
-- Achieved robust segmentation with high IoU and AUC scores.
-- Extracted near precise geometric measurements and tracked motion dynamics.
-- Estimated rotation cycles with high accuracy after accounting for environmental noise.
-- Derived navigation parameters for drone applications.
+- Achieved high segmentation accuracy with strong IoU and AUC metrics.  
+- Extracted precise geometric and motion parameters.  
+- Robust rotation cycle estimation even under lighting and motion noise.  
+- Derived actionable surface velocity parameters for navigation control.
+
+---
 
 ## Challenges
-- Variations in lighting conditions and background complexity impacted segmentation accuracy.
-- Non-ideal motion of the AO introduced noise in centroid tracking.
-- Processing limitations were addressed through frame skipping and filtering techniques.
+- Inconsistent lighting and background interference reduced segmentation quality.  
+- Irregular AO motion introduced centroid tracking noise.  
+- Real-time limitations mitigated through adaptive frame selection and filtering.
+
+---
 
 ## Future Work
-- Incorporate machine learning models (e.g., U-Net, Mask R-CNN) for more robust segmentation.
-- Optimize the pipeline for real-time operations using GPU acceleration.
-- Extend the methodology to handle more complex and irregular rotating objects.
-
-## Code Availability Notice
-
-This code is currently submitted for academic evaluation. **The source files cannot be shared publicly until the assessment results are released.** Furthermore, public access will be determined based on the university's policy regarding the reuse of coursework for future student cohorts.
+- Integrate deep learning models (U-Net, Mask R-CNN) for adaptive segmentation.  
+- Optimize the full pipeline for real-time inference using GPU acceleration.  
+- Extend methodology to handle non-spherical or irregular rotating bodies.
 
 ---
 
 ## Contact
-
-Reach out if you have questions or want to collaborate:
-
-* **GitHub:** https://github.com/nehith23
-* **LinkedIn:** www.linkedin.com/in/nehith-v
-* **Email:** ucabvem@ucl.ac.uk
+**GitHub:** [nehith23](https://github.com/nehith23)  
+**LinkedIn:** [Nehith V](https://www.linkedin.com/in/nehith-v)  
+**Email:** ucabvem@ucl.ac.uk
