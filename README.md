@@ -45,12 +45,6 @@ The project develops a perception pipeline that combines **vision-based sensing*
 - **Result:** Reliable cycle estimation under noisy, real-time conditions.  
 <img width="785" alt="Rotation Estimation" src="https://github.com/user-attachments/assets/e96bc24c-79cd-4abc-adb1-0cd08ea31851" />
 
-### Task 4: Drone Navigation Parameters
-- **Diameter Calculation:** Pixel-to-world conversion via Pinhole Camera Model.  
-- **Velocity Derivation:** Surface velocity vs. latitude, based on rotation period.  
-<img width="566" alt="Diameter Measurement" src="https://github.com/user-attachments/assets/80d431e5-fd42-4495-87b1-6403696f2c2f" />  
-<img width="674" alt="Velocity Calculation" src="https://github.com/user-attachments/assets/4adac2ea-b93c-4dca-ae9b-073e33164936" />
-
 ---
 
 ## Tools and Libraries
