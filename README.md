@@ -1,6 +1,6 @@
 # Computer Vision and Sensing Techniques for Autonomous Drone Landing in Space Exploration
 
-This repository contains the coursework project for **COMP0245 – Computer Vision and Robotics**, focusing on developing and evaluating computer vision algorithms for **autonomous drone landing and navigation in space environments**.  
+This repository contains the coursework project for **COMP0241 –  Computer Vision and Sensing**, focusing on developing and evaluating computer vision algorithms for **autonomous drone landing and navigation in space environments**.  
 The project integrates segmentation, motion tracking, and rotation analysis to estimate geometric and dynamic properties of a suspended Astronomical Object (AO).
 
 ![ORB_Matching](https://github.com/user-attachments/assets/a1536f23-f220-435b-ad71-cf89fd6a198b)
