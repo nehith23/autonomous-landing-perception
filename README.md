@@ -64,11 +64,16 @@ This project focused on developing robust computer vision and sensing algorithms
 - Optimize the pipeline for real-time operations using GPU acceleration.
 - Extend the methodology to handle more complex and irregular rotating objects.
 
-## Acknowledgments
+## Code Availability Notice
 
-- This project was developed as part of the assessment for the [COMP0241 - Computer Vision and Sensing](https://www.ucl.ac.uk/module-catalogue/modules/computer-vision-and-sensing-COMP0241) module at University College London. 
-- It was a collaborative effort by myself, [@ziyaruso](), and [@lorenzouttini](https://github.com/lorenzouttini).
-- Special thanks to the teaching team for providing guidance and resources throughout the project.
+This code is currently submitted for academic evaluation. **The source files cannot be shared publicly until the assessment results are released.** Furthermore, public access will be determined based on the university's policy regarding the reuse of coursework for future student cohorts.
 
-## License
-[MIT License](LICENSE)
+---
+
+## Contact
+
+Reach out if you have questions or want to collaborate:
+
+* **GitHub:** https://github.com/nehith23
+* **LinkedIn:** www.linkedin.com/in/nehith-v
+* **Email:** ucabvem@ucl.ac.uk
