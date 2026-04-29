@@ -83,4 +83,4 @@ The project develops a perception pipeline that combines **vision-based sensing*
 ## Contact
 **GitHub:** [nehith23](https://github.com/nehith23)  
 **LinkedIn:** [Nehith V](https://www.linkedin.com/in/nehith-v)  
-**Email:** ucabvem@ucl.ac.uk
+**Email:** vemulapallinehith@gmail.com
